@@ -1,9 +1,10 @@
-facenet_pytorch==2.5.3
-numpy==1.19.5
-opencv_python==4.6.0.66
+facenet_pytorch
+numpy
+opencv_python
 pandas==1.1.5
-Pillow==10.2.0
+Pillow
 retinaface==1.1.0
 torch==1.10.2
 torchvision==0.11.3
 tqdm==4.64.1
+urllib3==1.26.6

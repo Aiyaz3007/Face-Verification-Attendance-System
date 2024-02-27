@@ -7,7 +7,7 @@ This is a Face Verification Attendance System utilizing RetinaFace and Inception
 ## Installation
 
 ### Python Version
-This project requires Python 3.6.13. Please ensure you have Python 3.6.13 installed.
+This project requires Python 3.7.0. Please ensure you have Python 3.7.0 installed.
 
 ### Running requirements.txt
 Before running the system, ensure you have installed the required dependencies by executing:
