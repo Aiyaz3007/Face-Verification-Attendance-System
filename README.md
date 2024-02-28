@@ -44,6 +44,18 @@ green = (0,255,0)
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 ```
+## To Register New Faces
+
+```
+we have create a Easy User Interface in windows executable format, just open the .exe file
+Fill Required Details
+Image - both select/drag and drop (available)
+Name - Enter the Name 
+Reg No - Enter the Register No 
+
+
+NOTE: For Smooth UI the dll files should be present in exe file directory.
+```
 ## Running the System
 
 ```

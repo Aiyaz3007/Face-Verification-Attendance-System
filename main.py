@@ -36,7 +36,7 @@ for file_path in loading_bar(student_db_handler.get_all_imagenames()):
         platform_specific_path = os.path.normpath(file_path)
         filename_with_extension = os.path.basename(platform_specific_path)
         name = os.path.splitext(os.path.basename(platform_specific_path))[0]
-
+        print(name,filename_with_extension,platform_specific_path)
         image = cv2.imread(os.path.join(constants.known_images_folder, filename_with_extension))
         face_data = detector.predict(image)[0]
 

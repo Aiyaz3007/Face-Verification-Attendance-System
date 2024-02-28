@@ -5,15 +5,15 @@ import cv2
 
 # known face  
 database_path = "./known_images"
-db_json_file = database_path + "/students_db.json"
+db_json_file = database_path + "/students.json"
 
 #inference
 """
 0 - webcam
 'video.mp4' - input video
 """
-input_format = "sriram.mp4"
-# input_format = 0
+# input_format = "class.mp4"
+input_format = 0
 
 
 students_json_file = "./student_db/students_info.json"
