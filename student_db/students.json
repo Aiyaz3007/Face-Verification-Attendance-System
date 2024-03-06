@@ -1,14 +1,1 @@
-{
-    "students": {
-        "RCAS2019BCS137": {
-            "reg_no": "RCAS2019BCS137",
-            "name": "Aiyaz M",
-            "image_path": "C:\\Users\\QpiAI\\Downloads\\Face-Verification-Attendance-System\\student_db\\images\\aiyaz.jpg"
-        },
-        "RCAS2019BCS138": {
-            "reg_no": "RCAS2019BCS138",
-            "name": "Sriram",
-            "image_path": "C:\\Users\\QpiAI\\Downloads\\Face-Verification-Attendance-System\\student_db\\images\\sriram.jpg"
-        }
-    }
-}
+{"students":{"RCAS2019":{"reg_no":"RCAS2019","name":"Aiyaz M","image_path":"C:\\Users\\QpiAI\\Downloads\\Face-Verification-Attendance-System\\student_db\\images\\aiyaz.jpg"},"RCAS2020":{"reg_no":"RCAS2020","name":"Sriram","image_path":"C:\\Users\\QpiAI\\Downloads\\Face-Verification-Attendance-System\\student_db\\images\\sriram.jpg"}}}
