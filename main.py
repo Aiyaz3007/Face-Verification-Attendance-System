@@ -63,7 +63,11 @@ frame_count = 0
 while video_capture.isOpened():
     ret,frame = video_capture.read()
     try:
-        faces = detector.predict(frame)
+        try:
+            faces = detector.predict(frame)
+        except Exception as e:
+            print("Error occured at face prediction")
+            
         for idx,face in enumerate(faces):
             if all(key in face for key in ['x1', 'y1', 'x2', 'y2']):
                 x1, y1, x2, y2 = face['x1'], face['y1'], face['x2'], face['y2']
@@ -78,21 +82,18 @@ while video_capture.isOpened():
                 if similarities[max_index] > constants.threshold:
                     name = known_names[max_index]
                     current_student_regno = students_reg_no[max_index]
-                    
                     info = student_db_handler.get_info_from_reg_no(current_student_regno)
+                    col_name = str(date.today().strftime("%Y-%m-%d"))
 
-                    print("-------------------")
-                    print(info[str(date.today())])
-                    print("-------------------")
-                    
-
-                    if info[str(date.today())] in ["P","A"]:
+                    if info[col_name] in ["P","A"]:
                         if info[str(date.today())] == "A":
                             student_db_handler.update_status_for_reg_no(current_student_regno,"P")
                     else:
                         student_db_handler.update_status_for_reg_no(current_student_regno,"A")
+
                 else:
                     name = "unknown"
+
                 
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
                 cv2.putText(frame, name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
