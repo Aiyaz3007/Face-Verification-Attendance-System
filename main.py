@@ -82,9 +82,9 @@ while video_capture.isOpened():
                 if similarities[max_index] > constants.threshold:
                     name = known_names[max_index]
                     current_student_regno = students_reg_no[max_index]
-                    info = student_db_handler.get_info_from_reg_no(current_student_regno)
+                    info = dict(student_db_handler.get_info_from_reg_no(current_student_regno))
                     col_name = str(date.today().strftime("%Y-%m-%d"))
-
+                  
                     if info[col_name] in ["P","A"]:
                         if info[str(date.today())] == "A":
                             student_db_handler.update_status_for_reg_no(current_student_regno,"P")
@@ -101,7 +101,7 @@ while video_capture.isOpened():
                 
 
     except Exception as e:
-        print(e)
+        print("error: ",e)
 
     # Calculate FPS
     frame_count += 1
