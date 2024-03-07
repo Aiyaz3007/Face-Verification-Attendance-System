@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np 
 import time
+import json
 
 from facenet_pytorch import InceptionResnetV1
 from retinaface import RetinaFace
@@ -31,6 +32,16 @@ known_faces = []
 known_names = []
 
 
+with open(constants.students_json_file,"r") as f:
+    _json_data = json.load(f)
+known_names = [_json_data["students"][reg_no]["name"] for reg_no in _json_data['students']]
+
+
+# for  reg_no in _json_data['students']:
+#     print(reg_no)
+#     print(_json_data)
+     
+
 for file_path in loading_bar(student_db_handler.get_all_imagenames()):
     try:
         platform_specific_path = os.path.normpath(file_path)
@@ -43,7 +54,7 @@ for file_path in loading_bar(student_db_handler.get_all_imagenames()):
         cropped_face = image[face_data["y1"]:face_data["y2"],face_data["x1"]:face_data["x2"]]
         embedding = calculate_embedding(cropped_face,model)
         known_faces.append(embedding)
-        known_names.append(name)
+        # known_names.append(name)
 
     except Exception as e:
         print(e)
