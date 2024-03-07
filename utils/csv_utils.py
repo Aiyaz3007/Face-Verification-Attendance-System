@@ -47,8 +47,7 @@ class StudentDataHandler:
     
     def get_info_from_reg_no(self, reg_no):
         # Filter rows where 'reg_number' matches the given registration number
-        info = self.csv_data[self.csv_data['reg_no'] == reg_no]
-        
+        info = self.csv_data[self.csv_data['reg_no'] == str(reg_no)]
         # Check if any row matches the registration number
         if not info.empty:
             return info.to_dict(orient='records')[0]

@@ -16,7 +16,7 @@ db_json_file = database_path + "/students.json"
 input_format = 0
 
 
-students_json_file = "./student_db/students_info.json"
+students_json_file = "./student_db/students.json"
 attendance_file = "./student_db/attendance.csv"
 known_images_folder = "./student_db/images"  # Path to the folder of known images
 
